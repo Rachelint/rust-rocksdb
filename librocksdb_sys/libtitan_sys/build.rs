@@ -23,6 +23,8 @@ fn main() {
         cfg.define("FORCE_SSE42", "ON");
     }
     let dst = cfg
+        .cxxflag("-Wno-unused-but-set-variable")
+        .cxxflag("-Wno-error=unused-but-set-variable")
         .define("ROCKSDB_DIR", cur_dir.join("..").join("rocksdb"))
         .define("WITH_TITAN_TESTS", "OFF")
         .define("WITH_TITAN_TOOLS", "OFF")

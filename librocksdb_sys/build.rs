@@ -153,6 +153,8 @@ fn build_rocksdb() -> Build {
         }
     });
     let dst = cfg
+        .cxxflag("-Wno-unused-but-set-variable")
+        .cxxflag("-Wno-error=unused-but-set-variable")
         .define("WITH_GFLAGS", "OFF")
         .register_dep("Z")
         .define("WITH_ZLIB", "ON")
